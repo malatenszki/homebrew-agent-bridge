@@ -1,7 +1,7 @@
-class AgentBridgeDaemon < Formula
+class AgentBridge < Formula
   desc "Control CLI agents (like Claude Code) remotely from iOS"
-  homepage "https://github.com/malatenszki/agent-bridge-daemon"
-  url "https://github.com/malatenszki/agent-bridge-daemon.git", tag: "v1.1.0"
+  homepage "https://github.com/malatenszki/agent-bridge"
+  url "https://github.com/malatenszki/agent-bridge.git", tag: "v1.2.0"
   license "MIT"
 
   depends_on "tmux"
@@ -9,13 +9,13 @@ class AgentBridgeDaemon < Formula
 
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
-    bin.install ".build/release/agent-bridge-daemon"
+    bin.install ".build/release/agent-bridge"
   end
 
   def caveats
     <<~EOS
-      To start agent-bridge-daemon:
-        agent-bridge-daemon
+      To start agent-bridge:
+        agent-bridge
 
       Then scan the QR code with the Agent Bridge iOS app.
 
@@ -24,6 +24,6 @@ class AgentBridgeDaemon < Formula
   end
 
   test do
-    assert_match "Agent Bridge", shell_output("#{bin}/agent-bridge-daemon --help 2>&1", 1)
+    assert_match "Agent Bridge", shell_output("#{bin}/agent-bridge --help 2>&1", 1)
   end
 end
