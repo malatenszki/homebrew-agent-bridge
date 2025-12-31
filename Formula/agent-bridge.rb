@@ -1,7 +1,7 @@
 class AgentBridge < Formula
   desc "Control CLI agents (like Claude Code) remotely from iOS"
   homepage "https://github.com/malatenszki/agent-bridge"
-  url "https://github.com/malatenszki/agent-bridge.git", tag: "v1.2.0"
+  url "https://github.com/malatenszki/agent-bridge.git", tag: "v1.2.1"
   license "MIT"
 
   depends_on "tmux"
