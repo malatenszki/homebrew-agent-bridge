@@ -20,6 +20,9 @@ class AgentBridge < Formula
       Then scan the QR code with the Agent Bridge iOS app.
 
       Make sure your iPhone is on the same WiFi network as this Mac.
+
+      If build fails with 'memory' file not found, run:
+        sudo xcode-select --reset
     EOS
   end
 
