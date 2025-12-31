@@ -1,11 +1,11 @@
 class AgentBridgeDaemon < Formula
   desc "Control CLI agents (like Claude Code) remotely from iOS"
   homepage "https://github.com/malatenszki/agent-bridge-daemon"
-  url "https://github.com/malatenszki/agent-bridge-daemon.git", tag: "v1.0.0"
+  url "https://github.com/malatenszki/agent-bridge-daemon.git", tag: "v1.1.0"
   license "MIT"
 
   depends_on "tmux"
-  depends_on xcode: ["14.0", :build]
+  depends_on :macos
 
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
